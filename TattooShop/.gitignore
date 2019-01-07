@@ -1,6 +1,6 @@
 
 ###> symfony/framework-bundle ###
-
+/var/logs/*
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
