@@ -8,7 +8,7 @@
         <li>Home</li>
         <li><a href="#" class="js-all">Artists</a></li>
     {% for artist in artists %}
-        <li><a href="#" class ="link" name="{{artist.id }}">{{artist.name}}</a></li>
+        <li><a href="#" class ="linkArtist" name="{{artist.id }}">{{artist.name}}</a></li>
     {% endfor %}
         <li>contact</li>
     </ul>
@@ -24,15 +24,18 @@
     crossorigin="anonymous"></script>
     <script>
         $( document ).ready(function() {
-            $('.link').click(function(){
+            $('.linkArtist').click(function(){
                 let selected = $(this).attr("name");
-                console.log(selected);
                 $('.miniature').hide();
                 $("." + selected + "").show();      
             });
             $('.js-all').click(function(){
                 $('.miniature').show();
             });
+            $('.js-all').click(function(){
+                $('.linkArtist').toggle();
+            });
+            
         });
     </script>
   

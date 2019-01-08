@@ -79,7 +79,7 @@ class __TwigTemplate_f4e99742db8251229d5acff36f5046479857a1a4c09dd2591346e35b7c0
         $context['_seq'] = twig_ensure_traversable((isset($context["artists"]) || array_key_exists("artists", $context) ? $context["artists"] : (function () { throw new Twig_Error_Runtime('Variable "artists" does not exist.', 10, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["artist"]) {
             // line 11
-            echo "        <li><a href=\"#\" class =\"link\" name=\"";
+            echo "        <li><a href=\"#\" class =\"linkArtist\" name=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["artist"], "id", array()), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["artist"], "name", array()), "html", null, true);
@@ -133,15 +133,18 @@ class __TwigTemplate_f4e99742db8251229d5acff36f5046479857a1a4c09dd2591346e35b7c0
     crossorigin=\"anonymous\"></script>
     <script>
         \$( document ).ready(function() {
-            \$('.link').click(function(){
+            \$('.linkArtist').click(function(){
                 let selected = \$(this).attr(\"name\");
-                console.log(selected);
                 \$('.miniature').hide();
                 \$(\".\" + selected + \"\").show();      
             });
             \$('.js-all').click(function(){
                 \$('.miniature').show();
             });
+            \$('.js-all').click(function(){
+                \$('.linkArtist').toggle();
+            });
+            
         });
     </script>
   
@@ -181,7 +184,7 @@ class __TwigTemplate_f4e99742db8251229d5acff36f5046479857a1a4c09dd2591346e35b7c0
         <li>Home</li>
         <li><a href=\"#\" class=\"js-all\">Artists</a></li>
     {% for artist in artists %}
-        <li><a href=\"#\" class =\"link\" name=\"{{artist.id }}\">{{artist.name}}</a></li>
+        <li><a href=\"#\" class =\"linkArtist\" name=\"{{artist.id }}\">{{artist.name}}</a></li>
     {% endfor %}
         <li>contact</li>
     </ul>
@@ -197,15 +200,18 @@ class __TwigTemplate_f4e99742db8251229d5acff36f5046479857a1a4c09dd2591346e35b7c0
     crossorigin=\"anonymous\"></script>
     <script>
         \$( document ).ready(function() {
-            \$('.link').click(function(){
+            \$('.linkArtist').click(function(){
                 let selected = \$(this).attr(\"name\");
-                console.log(selected);
                 \$('.miniature').hide();
                 \$(\".\" + selected + \"\").show();      
             });
             \$('.js-all').click(function(){
                 \$('.miniature').show();
             });
+            \$('.js-all').click(function(){
+                \$('.linkArtist').toggle();
+            });
+            
         });
     </script>
   
