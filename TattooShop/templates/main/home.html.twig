@@ -3,5 +3,17 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<h1>Enigmatique Mysterarium</h1>
+    <h1>Enigmatique Mysterarium</h1>
+    <ul>
+    {% for artist in artists %}
+        <li><a href="#" class="miniature {{artist.name }}">{{ artist.name }}</a></li>
+    {% endfor %}
+    </ul>
+
+    {% for artwork in artworks %}
+        <a href="#" class="miniature {{ artwork.artist.id }}"><img src="{{ artwork.link }}"></a>
+    {% endfor %}
+{% endblock %}
+{% block javascripts %}
+
 {% endblock %}

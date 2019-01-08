@@ -21,6 +21,12 @@ class Artwork
      */
     private $Link;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Artist", inversedBy="artworks")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $Artist;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +40,18 @@ class Artwork
     public function setLink(string $Link): self
     {
         $this->Link = $Link;
+
+        return $this;
+    }
+
+    public function getArtist(): ?Artist
+    {
+        return $this->Artist;
+    }
+
+    public function setArtist(?Artist $Artist): self
+    {
+        $this->Artist = $Artist;
 
         return $this;
     }

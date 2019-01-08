@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Artwork;
+use App\Entity\Artist;
 
 class MainController extends AbstractController
 {
@@ -21,6 +23,12 @@ class MainController extends AbstractController
      */
     public function home()
     {
+        $repoArtwork = $this->getDoctrine()->getRepository(Artwork::Class);
+        $repoArtists = $this->getDoctrine()->getRepository(Artist::Class);
+
+        $allArtworks = $repoArtwork->findAll();
+        $allArtists = $repoArtists->findAll();
+        return $this->render('main/home.html.twig',['artworks'=>$allArtworks,'artists'=>$allArtists]);
         return $this->render('main/home.html.twig');
     }
 }
