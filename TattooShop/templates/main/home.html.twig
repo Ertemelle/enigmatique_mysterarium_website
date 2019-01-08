@@ -5,9 +5,12 @@
 {% block body %}
     <h1>Enigmatique Mysterarium</h1>
     <ul>
+        <li>Home</li>
+        <li><a href="#" class="js-all">Artists</a></li>
     {% for artist in artists %}
-        <li><a href="#" class="miniature {{artist.name }}">{{ artist.name }}</a></li>
+        <li><a href="#" class ="link" name="{{artist.id }}">{{artist.name}}</a></li>
     {% endfor %}
+        <li>contact</li>
     </ul>
 
     {% for artwork in artworks %}
@@ -15,5 +18,22 @@
     {% endfor %}
 {% endblock %}
 {% block javascripts %}
-
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    crossorigin="anonymous"></script>
+    <script>
+        $( document ).ready(function() {
+            $('.link').click(function(){
+                let selected = $(this).attr("name");
+                console.log(selected);
+                $('.miniature').hide();
+                $("." + selected + "").show();      
+            });
+            $('.js-all').click(function(){
+                $('.miniature').show();
+            });
+        });
+    </script>
+  
 {% endblock %}

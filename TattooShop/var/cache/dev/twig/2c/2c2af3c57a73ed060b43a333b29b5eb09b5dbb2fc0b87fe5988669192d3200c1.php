@@ -14,7 +14,6 @@ class __TwigTemplate_b40417552f472fcc6309122c6c1394035d8a77f33be07f16ce02fdfa0c6
         $this->parent = false;
 
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
             'body' => array($this, 'block_body'),
             'javascripts' => array($this, 'block_javascripts'),
@@ -34,26 +33,22 @@ class __TwigTemplate_b40417552f472fcc6309122c6c1394035d8a77f33be07f16ce02fdfa0c6
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>";
-        // line 5
-        $this->displayBlock('title', $context, $blocks);
-        echo "</title>
         ";
-        // line 6
+        // line 5
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
+        // line 6
         echo "    </head>
     <body>
         ";
-        // line 9
+        // line 8
         $this->displayBlock('body', $context, $blocks);
-        // line 10
+        // line 9
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 11
+        // line 10
         echo "    </body>
 </html>
-";
+    ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -63,24 +58,6 @@ class __TwigTemplate_b40417552f472fcc6309122c6c1394035d8a77f33be07f16ce02fdfa0c6
     }
 
     // line 5
-    public function block_title($context, array $blocks = array())
-    {
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Welcome!";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 6
     public function block_stylesheets($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -97,7 +74,7 @@ class __TwigTemplate_b40417552f472fcc6309122c6c1394035d8a77f33be07f16ce02fdfa0c6
 
     }
 
-    // line 9
+    // line 8
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -114,7 +91,7 @@ class __TwigTemplate_b40417552f472fcc6309122c6c1394035d8a77f33be07f16ce02fdfa0c6
 
     }
 
-    // line 10
+    // line 9
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -138,7 +115,7 @@ class __TwigTemplate_b40417552f472fcc6309122c6c1394035d8a77f33be07f16ce02fdfa0c6
 
     public function getDebugInfo()
     {
-        return array (  118 => 10,  101 => 9,  84 => 6,  66 => 5,  54 => 11,  51 => 10,  49 => 9,  45 => 7,  43 => 6,  39 => 5,  33 => 1,);
+        return array (  95 => 9,  78 => 8,  61 => 5,  49 => 10,  46 => 9,  44 => 8,  40 => 6,  38 => 5,  32 => 1,);
     }
 
     public function getSourceContext()
@@ -147,7 +124,6 @@ class __TwigTemplate_b40417552f472fcc6309122c6c1394035d8a77f33be07f16ce02fdfa0c6
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -155,6 +131,6 @@ class __TwigTemplate_b40417552f472fcc6309122c6c1394035d8a77f33be07f16ce02fdfa0c6
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "D:\\GitHub Tattoo\\enigmatique_mysterarium_website\\TattooShop\\templates\\base.html.twig");
+    ", "base.html.twig", "D:\\GitHub Tattoo\\enigmatique_mysterarium_website\\TattooShop\\templates\\base.html.twig");
     }
 }

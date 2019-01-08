@@ -16,6 +16,7 @@ class __TwigTemplate_f4e99742db8251229d5acff36f5046479857a1a4c09dd2591346e35b7c0
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
+            'javascripts' => array($this, 'block_javascripts'),
         );
     }
 
@@ -68,43 +69,83 @@ class __TwigTemplate_f4e99742db8251229d5acff36f5046479857a1a4c09dd2591346e35b7c0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<h1>Enigmatique Mysterarium</h1>
-<ul>
-";
-        // line 8
+        echo "    <h1>Enigmatique Mysterarium</h1>
+    <ul>
+        <li>Home</li>
+        <li><a href=\"#\" class=\"js-all\">Artists</a></li>
+    ";
+        // line 10
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["artists"]) || array_key_exists("artists", $context) ? $context["artists"] : (function () { throw new Twig_Error_Runtime('Variable "artists" does not exist.', 8, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["artists"]) || array_key_exists("artists", $context) ? $context["artists"] : (function () { throw new Twig_Error_Runtime('Variable "artists" does not exist.', 10, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["artist"]) {
-            // line 9
-            echo "    <li><a href=\"#\" class=\"miniature ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["artist"], "name", array()), "html", null, true);
+            // line 11
+            echo "        <li><a href=\"#\" class =\"link\" name=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["artist"], "id", array()), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["artist"], "name", array()), "html", null, true);
             echo "</a></li>
-";
+    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['artist'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
-        echo "</ul>
-
-";
         // line 13
+        echo "        <li>contact</li>
+    </ul>
+
+    ";
+        // line 16
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["artworks"]) || array_key_exists("artworks", $context) ? $context["artworks"] : (function () { throw new Twig_Error_Runtime('Variable "artworks" does not exist.', 13, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["artworks"]) || array_key_exists("artworks", $context) ? $context["artworks"] : (function () { throw new Twig_Error_Runtime('Variable "artworks" does not exist.', 16, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["artwork"]) {
-            // line 14
-            echo "    <a href=\"#\" class=\"miniature ";
+            // line 17
+            echo "        <a href=\"#\" class=\"miniature ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["artwork"], "artist", array()), "id", array()), "html", null, true);
             echo "\"><img src=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["artwork"], "link", array()), "html", null, true);
             echo "\"></a>
-";
+    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['artwork'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 20
+    public function block_javascripts($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 21
+        echo "    <script
+    src=\"https://code.jquery.com/jquery-3.3.1.slim.js\"
+    integrity=\"sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=\"
+    crossorigin=\"anonymous\"></script>
+    <script>
+        \$( document ).ready(function() {
+            \$('.link').click(function(){
+                let selected = \$(this).attr(\"name\");
+                console.log(selected);
+                \$('.miniature').hide();
+                \$(\".\" + selected + \"\").show();      
+            });
+            \$('.js-all').click(function(){
+                \$('.miniature').show();
+            });
+        });
+    </script>
+  
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -125,7 +166,7 @@ class __TwigTemplate_f4e99742db8251229d5acff36f5046479857a1a4c09dd2591346e35b7c0
 
     public function getDebugInfo()
     {
-        return array (  98 => 14,  94 => 13,  90 => 11,  79 => 9,  75 => 8,  71 => 6,  62 => 5,  45 => 3,  15 => 1,);
+        return array (  130 => 21,  121 => 20,  102 => 17,  98 => 16,  93 => 13,  82 => 11,  78 => 10,  72 => 6,  63 => 5,  46 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -135,16 +176,39 @@ class __TwigTemplate_f4e99742db8251229d5acff36f5046479857a1a4c09dd2591346e35b7c0
 {% block title %}{% endblock %}
 
 {% block body %}
-<h1>Enigmatique Mysterarium</h1>
-<ul>
-{% for artist in artists %}
-    <li><a href=\"#\" class=\"miniature {{artist.name }}\">{{ artist.name }}</a></li>
-{% endfor %}
-</ul>
+    <h1>Enigmatique Mysterarium</h1>
+    <ul>
+        <li>Home</li>
+        <li><a href=\"#\" class=\"js-all\">Artists</a></li>
+    {% for artist in artists %}
+        <li><a href=\"#\" class =\"link\" name=\"{{artist.id }}\">{{artist.name}}</a></li>
+    {% endfor %}
+        <li>contact</li>
+    </ul>
 
-{% for artwork in artworks %}
-    <a href=\"#\" class=\"miniature {{ artwork.artist.id }}\"><img src=\"{{ artwork.link }}\"></a>
-{% endfor %}
+    {% for artwork in artworks %}
+        <a href=\"#\" class=\"miniature {{ artwork.artist.id }}\"><img src=\"{{ artwork.link }}\"></a>
+    {% endfor %}
+{% endblock %}
+{% block javascripts %}
+    <script
+    src=\"https://code.jquery.com/jquery-3.3.1.slim.js\"
+    integrity=\"sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=\"
+    crossorigin=\"anonymous\"></script>
+    <script>
+        \$( document ).ready(function() {
+            \$('.link').click(function(){
+                let selected = \$(this).attr(\"name\");
+                console.log(selected);
+                \$('.miniature').hide();
+                \$(\".\" + selected + \"\").show();      
+            });
+            \$('.js-all').click(function(){
+                \$('.miniature').show();
+            });
+        });
+    </script>
+  
 {% endblock %}
 ", "main/home.html.twig", "D:\\GitHub Tattoo\\enigmatique_mysterarium_website\\TattooShop\\templates\\main\\home.html.twig");
     }
